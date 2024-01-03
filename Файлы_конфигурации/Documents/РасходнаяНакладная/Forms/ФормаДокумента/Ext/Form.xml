@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОтчетОтчетПоОстаткамТоваровНаСкладахОстаткиПоСкладу" id="83">
+				<Type>CommandBarButton</Type>
+				<CommandName>Report.ОтчетПоОстаткамТоваровНаСкладах.Command.ОстаткиПоСкладу</CommandName>
+				<DataPath>Объект.Склад</DataPath>
+				<ExtendedTooltip name="ФормаОтчетОтчетПоОстаткамТоваровНаСкладахОстаткиПоСкладуРасширеннаяПодсказка" id="84"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ЛеваяКолонка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ЛеваяКолонкаРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="Номер" id="5">
+							<DataPath>Объект.Number</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НомерКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="7"/>
+						</InputField>
+						<InputField name="Дата" id="8">
+							<DataPath>Объект.Date</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="10"/>
+						</InputField>
+						<InputField name="Организация" id="11">
+							<DataPath>Объект.Организация</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="13"/>
+						</InputField>
+						<InputField name="Склад" id="14">
+							<DataPath>Объект.Склад</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СкладКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="16"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ПраваяКолонка" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПраваяКолонкаРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<InputField name="Контрагент" id="19">
+							<DataPath>Объект.Контрагент</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КонтрагентКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="Договор" id="22">
+							<DataPath>Объект.Договор</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДоговорКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="24"/>
+							<Events>
+								<Event name="OnChange">ДоговорПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ДоговорВидЦены" id="71">
+							<DataPath>Объект.Договор.ВидЦены</DataPath>
+							<Enabled>false</Enabled>
+							<ContextMenu name="ДоговорВидЦеныКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ДоговорВидЦеныРасширеннаяПодсказка" id="73"/>
+						</InputField>
+						<InputField name="ВидЦен" id="77">
+							<DataPath>Объект.ВидЦен</DataPath>
+							<ContextMenu name="ВидЦенКонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="ВидЦенРасширеннаяПодсказка" id="79"/>
+						</InputField>
+						<InputField name="СуммаДокумента" id="25">
+							<DataPath>Объект.СуммаДокумента</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Таблица" id="31">
+			<Representation>List</Representation>
+			<Footer>true</Footer>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Таблица</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаКонтекстноеМеню" id="32"/>
+			<AutoCommandBar name="ТаблицаКоманднаяПанель" id="33"/>
+			<ExtendedTooltip name="ТаблицаРасширеннаяПодсказка" id="34"/>
+			<SearchStringAddition name="ТаблицаСтрокаПоиска" id="35">
+				<AdditionSource>
+					<Item>Таблица</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСтрокаПоискаКонтекстноеМеню" id="36"/>
+				<ExtendedTooltip name="ТаблицаСтрокаПоискаРасширеннаяПодсказка" id="37"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаСостояниеПросмотра" id="38">
+				<AdditionSource>
+					<Item>Таблица</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСостояниеПросмотраКонтекстноеМеню" id="39"/>
+				<ExtendedTooltip name="ТаблицаСостояниеПросмотраРасширеннаяПодсказка" id="40"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаУправлениеПоиском" id="41">
+				<AdditionSource>
+					<Item>Таблица</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаУправлениеПоискомКонтекстноеМеню" id="42"/>
+				<ExtendedTooltip name="ТаблицаУправлениеПоискомРасширеннаяПодсказка" id="43"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТаблицаНомерСтроки" id="44">
+					<DataPath>Объект.Таблица.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаНомерСтрокиКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ТаблицаНомерСтрокиРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+				<InputField name="ТаблицаНомеклатура" id="47">
+					<DataPath>Объект.Таблица.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаНомеклатураКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ТаблицаНомеклатураРасширеннаяПодсказка" id="49"/>
+					<Events>
+						<Event name="OnChange">ТаблицаНомеклатураПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаНаборСвойств" id="74">
+					<DataPath>Объект.Таблица.НаборСвойств</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаНаборСвойствКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ТаблицаНаборСвойствРасширеннаяПодсказка" id="76"/>
+					<Events>
+						<Event name="OnChange">ТаблицаНаборСвойствПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаЕдиницыИзмерения" id="53">
+					<DataPath>Объект.Таблица.ЕдиницыИзмерения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед. изм.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаЕдиницыИзмеренияКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ТаблицаЕдиницыИзмеренияРасширеннаяПодсказка" id="55"/>
+					<Events>
+						<Event name="OnChange">ТаблицаЕдиницыИзмеренияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаКоэффициентЕдиницыИзмерения" id="80">
+					<DataPath>Объект.Таблица.КоэффициентЕдиницыИзмерения</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаКоэффициентЕдиницыИзмеренияКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ТаблицаКоэффициентЕдиницыИзмеренияРасширеннаяПодсказка" id="82"/>
+				</InputField>
+				<LabelField name="ТаблицаЕдиницыИзмеренияКоэффициентЕдиницыИзмерения" id="68">
+					<DataPath>Объект.Таблица.ЕдиницыИзмерения.КоэффициентЕдиницыИзмерения</DataPath>
+					<Enabled>false</Enabled>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коэфф.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаЕдиницыИзмеренияКоэффициентЕдиницыИзмеренияКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ТаблицаЕдиницыИзмеренияКоэффициентЕдиницыИзмеренияРасширеннаяПодсказка" id="70"/>
+				</LabelField>
+				<InputField name="ТаблицаЦена" id="56">
+					<DataPath>Объект.Таблица.Цена</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаЦенаКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ТаблицаЦенаРасширеннаяПодсказка" id="58"/>
+					<Events>
+						<Event name="OnChange">ТаблицаЦенаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаКоличество" id="59">
+					<DataPath>Объект.Таблица.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterText>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итог:</v8:content>
+						</v8:item>
+					</FooterText>
+					<ContextMenu name="ТаблицаКоличествоКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ТаблицаКоличествоРасширеннаяПодсказка" id="61"/>
+					<Events>
+						<Event name="OnChange">ТаблицаКоличествоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаСумма" id="62">
+					<DataPath>Объект.Таблица.Сумма</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Таблица.TotalСумма</FooterDataPath>
+					<ContextMenu name="ТаблицаСуммаКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ТаблицаСуммаРасширеннаяПодсказка" id="64"/>
+					<Events>
+						<Event name="OnChange">ТаблицаСуммаПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Комментарий" id="65">
+			<DataPath>Объект.Комментарий</DataPath>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="66"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="67"/>
+		</InputField>
+		<InputField name="ОбъектОснование" id="85">
+			<DataPath>Объект.ОбъектОснование</DataPath>
+			<Enabled>false</Enabled>
+			<ContextMenu name="ОбъектОснованиеКонтекстноеМеню" id="86"/>
+			<ExtendedTooltip name="ОбъектОснованиеРасширеннаяПодсказка" id="87"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РасходнаяНакладная</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>AccumulationRegister.ОстаткиТоваровНаСкладах.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.ПартииТоваровНаСкладах.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.Продажи.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>AccountingRegister.Управленческий.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.РезервированиеТоваров.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>
